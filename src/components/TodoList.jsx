@@ -6,8 +6,8 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   const [edit, setEdit] = useState({ id: null, text: "", isCompleted: false });
 
   const editTodo = (newValue) => {
-    onUpdateTodo(edit.id,newValue);
-    setEdit({id : null , text : ""});
+    onUpdateTodo(edit.id, newValue);
+    setEdit({ id: null, text: "" });
   };
 
   const renderTodos = () => {
@@ -26,7 +26,9 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   };
 
   return (
-    <div>{edit.id ? <TodoForm submitTodo={editTodo} edit={edit} /> : renderTodos()}</div>
+    <div>
+      {edit.id ? <TodoForm submitTodo={editTodo} edit={edit} /> : renderTodos()}
+    </div>
   );
 };
 

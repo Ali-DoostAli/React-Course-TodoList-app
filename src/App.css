@@ -27,21 +27,51 @@
   justify-content: space-between;
   width: 20rem;
   align-items: center;
-  background-color: rgb(183, 209, 183);
+  background-color: rgb(230, 240, 230);
   margin: 10px;
   border-radius: 5px;
 }
-.completed{
+.completed {
   text-decoration: line-through;
   color: rgb(206, 123, 123);
 }
-input{
+input {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px 3px;
   outline: none;
+  width: 200px;
 }
 
-input:focus{
+input:focus {
   border: 2px solid rgb(93, 80, 151);
+}
+.formControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+  margin-bottom: 20px;
+}
+.btn {
+  color: #6d28d9;
+  background-color: #fff;
+  border: 1px solid #6d28d9;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.remove {
+  color: rgb(236, 68, 68);
+  border: 1px solid rgb(236, 68, 68);
+  margin-left: 7px;
+}
+.addTodo {
+  color: #fff;
+  background-color: #6d28d9;
+}
+.updateTodo {
+  color: #6d28d9;
+  background-color: #fff;
 }

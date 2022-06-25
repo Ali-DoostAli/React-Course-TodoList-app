@@ -28,7 +28,7 @@ const TodoApp = () => {
     setTodos(filteredTodos);
   };
 
-  const updateTodo = (id , newValue) => {
+  const updateTodo = (id, newValue) => {
     const index = todos.findIndex((todo) => todo.id === id);
     const selectedTodo = { ...todos[index] };
     selectedTodo.text = newValue;
