@@ -35,3 +35,13 @@
   text-decoration: line-through;
   color: rgb(206, 123, 123);
 }
+input{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 3px;
+  outline: none;
+}
+
+input:focus{
+  border: 2px solid rgb(93, 80, 151);
+}

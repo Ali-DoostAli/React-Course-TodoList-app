@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TodoForm = (props) => {
   const [input, setInput] = useState("");
+  const inputRef = useRef(null);
+  useEffect(()=>{
+    inputRef.current.focus();
+  },[])
 
   const changeHandler = (e) => {
     setInput(e.target.value);
@@ -13,15 +17,36 @@ const TodoForm = (props) => {
       alert("enter todo");
       return;
     } else {
-      props.addTodoHandler(input);
+      props.submitTodo(input);
       setInput("");
     }
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <input type="text" value={input} onChange={changeHandler} />
-      <button type="submit">Add</button>
+      {props.edit ? (
+        <>
+          <input
+            type="text"
+            value={input}
+            onChange={changeHandler}
+            placeholder="update todo..."
+            ref={inputRef}
+          />
+          <button type="submit">Update</button>
+        </>
+      ) : (
+        <>
+          <input
+            type="text"
+            value={input}
+            onChange={changeHandler}
+            placeholder="add todo..."
+            ref={inputRef}
+          />
+          <button type="submit">Add</button>
+        </>
+      )}
     </form>
   );
 };
